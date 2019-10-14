@@ -1,0 +1,19 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string x;
+            Console.WriteLine("Введите трехзначное число образующее возрастающую или убывающую последовательность");
+            x = Console.ReadLine();
+            if (x[0] < x[1] && x[1] < x[2] || x[2] < x[1] && x[1] < x[0])
+                Console.WriteLine("true");
+            else
+                Console.WriteLine("false");
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,44 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите M: ");
+            int M = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите N: ");
+            int N = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите целое число K: ");
+            int K = Convert.ToInt32(Console.ReadLine());
+            int[,] A = new int[M, N];
+            Console.WriteLine("Введите элементы матрицы А: ");
+            for (int i = 0; i < M; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    A[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            N -= 1;
+            for (int j = K - 1; j < N; j++)
+            {
+                for (int i = 0; i < M; i++)
+                {
+                    A[i, j] = A[i, j + 1];
+                }
+            }
+            for (int i = 0; i < M; i++)  //вывод элементов массива А
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    if (A[i, j] > 0) Console.Write(" ");
+                    Console.Write(A[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+    }
+}
